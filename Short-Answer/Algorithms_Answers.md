@@ -33,3 +33,6 @@ Similar to Binary Search. Steps:
         - else:
             make the floor one above the new LOW
             - start over with Step 1
+
+** Runtime complexity is, O(logn) :
+    - due to the dividing of floors in half each time
