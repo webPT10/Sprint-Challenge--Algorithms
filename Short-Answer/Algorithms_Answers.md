@@ -8,7 +8,8 @@ a) Runtime complexity is, O(n) :
 b) Runtime complexity is, O(n^2) :
     - entering a Loop inside of a Loop that are both n based. Which means it needs to run over n * n
 
-c) 
+c) Runtime complexity is, O(n) :
+    - Each the time the function will return 1 less than before, so it only needs to run as many times as initially provided.
 
 ## Exercise II
 
