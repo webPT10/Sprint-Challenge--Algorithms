@@ -92,12 +92,15 @@ class SortingRobot:
         """
         return self._light == "ON"
 
+
+# notes:
+# a sorting method which might be useful >> selection sort ??
+
     def sort(self):
         """
         Sort the robot's list.
         """
-        # Fill this out
-        pass
+        
 
 
 if __name__ == "__main__":
