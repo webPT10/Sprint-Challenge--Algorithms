@@ -105,8 +105,15 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
+        while self.can_move_left(): # moves to start of list to begin
+            self.move_left()
         
-
+        while self.light_is_on(): # light on shows boolean of sorting completed
+            self.swap_item() #  swap none in hand with next unsorted INDEX
+            
+            while self.can_move_right(): 
+                self.move_right()
+                
 
 if __name__ == "__main__":
     # Test our your implementation from the command line
