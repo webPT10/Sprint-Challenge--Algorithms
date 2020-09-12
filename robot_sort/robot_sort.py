@@ -117,8 +117,13 @@ class SortingRobot:
                 
                 if self.compare_item() > 0: # if one hand is LARGER, swap w/ SMALLER ??
                     self.swap_item()
+
+            while self.compare_item() is not None: # after holding next smallest, move LEFT until hitting NONE value
+                self.move_left()
+            self.compare_item()
+
                 
-                
+
 
 if __name__ == "__main__":
     # Test our your implementation from the command line
