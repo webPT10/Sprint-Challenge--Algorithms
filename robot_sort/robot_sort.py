@@ -92,12 +92,44 @@ class SortingRobot:
         """
         return self._light == "ON"
 
+
+# notes:
+# a sorting method which might be useful >> selection sort ??
+
+# Can Use: 
+#   logical operators. (if, and, or, not, etc.)
+#   comparison operators. (>, >=, <, <=, ==, is, etc.)
+#   iterators. (while, for, break, continue)
+
     def sort(self):
         """
         Sort the robot's list.
         """
-        # Fill this out
-        pass
+        while self.can_move_left(): # moves to start of list to begin
+            self.move_left()
+
+            # use not
+        while not self.light_is_on(): # light on shows boolean of sorting completed
+            self.swap_item() #  swap none in hand with next unsorted INDEX
+            
+            while self.can_move_right(): 
+                self.move_right()
+                
+                if self.compare_item() > 0: # if one hand is LARGER, swap w/ SMALLER ??
+                    self.swap_item()
+
+            while self.compare_item() is not None: # after holding next smallest, move LEFT until hitting NONE value
+                self.move_left()
+            self.swap_item()    # swap, now NONE is in hand?
+
+            if self.can_move_right(): # checks if the end of the LIST has been reached
+                self.move_right() #  moves over to next unsorted index 
+            
+            else:
+                self.set_light_on() # finished if no elements to right (fin)
+
+
+                
 
 
 if __name__ == "__main__":
