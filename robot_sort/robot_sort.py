@@ -96,6 +96,11 @@ class SortingRobot:
 # notes:
 # a sorting method which might be useful >> selection sort ??
 
+# Can Use: 
+#   logical operators. (if, and, or, not, etc.)
+#   comparison operators. (>, >=, <, <=, ==, is, etc.)
+#   iterators. (while, for, break, continue)
+
     def sort(self):
         """
         Sort the robot's list.
