@@ -107,8 +107,8 @@ class SortingRobot:
         """
         while self.can_move_left(): # moves to start of list to begin
             self.move_left()
-
-            # not?
+            
+            #not?
         while self.light_is_on(): # light on shows boolean of sorting completed
             self.swap_item() #  swap none in hand with next unsorted INDEX
             
@@ -120,7 +120,14 @@ class SortingRobot:
 
             while self.compare_item() is not None: # after holding next smallest, move LEFT until hitting NONE value
                 self.move_left()
-            self.compare_item()
+            self.swap_item()    # swap, now NONE is in hand?
+
+            if self.can_move_right(): # checks if the end of the LIST has been reached
+                self.move_right() #  moves over to next unsorted index 
+            
+            else:
+                self.set_light_on() # finished if no elements to right (fin)
+
 
                 
 
