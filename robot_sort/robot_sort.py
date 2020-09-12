@@ -107,12 +107,17 @@ class SortingRobot:
         """
         while self.can_move_left(): # moves to start of list to begin
             self.move_left()
-        
+
+            # not?
         while self.light_is_on(): # light on shows boolean of sorting completed
             self.swap_item() #  swap none in hand with next unsorted INDEX
             
             while self.can_move_right(): 
                 self.move_right()
+                
+                if self.compare_item() > 0: # if one hand is LARGER, swap w/ SMALLER ??
+                    self.swap_item()
+                
                 
 
 if __name__ == "__main__":
