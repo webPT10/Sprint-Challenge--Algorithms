@@ -105,31 +105,54 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        while self.can_move_left(): # moves to start of list to begin
-            self.move_left()
 
-            # use not
-        while not self.light_is_on(): # light on shows boolean of sorting completed
-            self.swap_item() #  swap none in hand with next unsorted INDEX
-            
-            while self.can_move_right(): 
+        # first > set the light to ON to show that it is ready to sort
+        self.set_light_on()
+
+        # pick up the FIRST item
+        self.swap_item()
+
+        # checks to see if the LIGHT is turned ON (On = ready to sort)
+        while self.light_is_on():
+            # checks if the Robot can move RIGHT
+            # if NO, then it will move on to see if it can move LEFT and sort from there
+
+            while self.can_move_right():
                 self.move_right()
-                
-                if self.compare_item() > 0: # if one hand is LARGER, swap w/ SMALLER ??
+                # moves LEFT and COMPARES items
+
+                if self.compare_item() == 1:
                     self.swap_item()
+                    # ROBOT should be holding the SMALLEST value
+                    # returns to line 109 to check if it can continue moving RIGHT
+                    # if YES, then it will execute line 110 until it can no longer move RIGHT
 
-            while self.compare_item() is not None: # after holding next smallest, move LEFT until hitting NONE value
-                self.move_left()
-            self.swap_item()    # swap, now NONE is in hand?
+            # the ROBOT has reached END of the list and the INDEX is EMPTY
+            if self.compare_item() == None:
+                # Bot should now be holding the LARGEST value
+                # Bot drops this value at the END of the LIST and shuts down
+                self.swap_item()
+                self.set_light_off()
+                break
 
-            if self.can_move_right(): # checks if the end of the LIST has been reached
-                self.move_right() #  moves over to next unsorted index 
-            
+            # if the ROBOT gets to the END of the LIST and IS HOLDING the SMALLEST value >> 
+            # the ROBOT might not be able to continue RIGHT but it might be able to go LEFT
             else:
-                self.set_light_on() # finished if no elements to right (fin)
 
+                while self.can_move_left() == True:
 
-                
+                    # the BOT moves LEFT and COMPARES but doesn't swap since it has the SMALLEST value
+                    # however, if the ROBOT gets to an EMPTY INDEX that doesn't have anything it DROPS what's currently being held
+                    # after this the ROBOT will move RIGHT and PICK UP that item
+                    self.move_left()
+                    if self.compare_item() == None:
+                        self.swap_item()
+                        self.move_right()
+                        self.swap_item()
+                        break
+                        # the ROBOT should be at the NEXT INDEX and then the LOOP BREAKS and 
+                        # returns to line 108 >>> 
+                        # start the process all over again
 
 
 if __name__ == "__main__":

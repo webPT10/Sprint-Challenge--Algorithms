@@ -17,5 +17,6 @@ def count_th(word):
         counter = 1
     
     return counter + count_th(word[1:])  # call itself 
-    # counter increases only if previous if statement is true
+
+    # counter increases only if previous IF statement is TRUE
     # count_th(word[1:]) >> reruns count_th function checking WORD from indice 1 to end

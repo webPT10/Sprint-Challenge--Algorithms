@@ -28,11 +28,11 @@ Similar to Binary Search. Steps:
         - check if there are any additional floors above current list of floors
 
         - if none:
-            - the floor directly above (curr+1) is f.
+            - the floor directly above (curr + 1) is f.
 
         - else:
             make the floor one above the new LOW
             - start over with Step 1
 
-** Runtime complexity is, O(logn) :
+** Runtime complexity is, O(log n) :
     - due to the dividing of floors in half each time
