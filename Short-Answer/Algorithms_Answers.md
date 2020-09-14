@@ -3,13 +3,16 @@
 ## Exercise I
 
 a) Runtime complexity is, O(n) :
-    - a is equal to n * n and the while loop only runs on a single additional * n
+    - a is equal to n * n and 
+    - the while loop only runs on a single additional * n
 
 b) Runtime complexity is, O(n^2) :
-    - entering a Loop inside of a Loop that are both n based. Which means it needs to run over n * n
+    - entering a Loop inside of a Loop that are both n based
+    - Which means it needs to run over n * n
 
 c) Runtime complexity is, O(n) :
-    - Each the time the function will return 1 less than before, so it only needs to run as many times as initially provided.
+    - Each the time the function will return 1 less than before, 
+    - so it only needs to run as many times as initially provided.
 
 ## Exercise II
 
@@ -35,4 +38,5 @@ Similar to Binary Search. Steps:
             - start over with Step 1
 
 ** Runtime complexity is, O(log n) :
-    - due to the dividing of floors in half each time
+    - Logarithmic time >> something is being divided 
+    - RC is due to the dividing of floors in half each time
